@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Styled from './styles';
-import './style.css';
 import Container from 'react-bootstrap/Container';
 import { faTrash, faEdit, faHeart } from '@fortawesome/free-solid-svg-icons';
 

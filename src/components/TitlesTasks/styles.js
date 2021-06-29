@@ -4,31 +4,14 @@ import { FormControl } from 'react-bootstrap';
 import FormCheck from 'react-bootstrap/FormCheck';
 
 const Styled = {
-  DivNormalTasks: styled.div`
+  DivTitleContainer: styled.div`
     margin: 0 auto;
     width: 75%;
     @media (max-width: 899px) {
       width: 100%;
     }
   `,
-  DivFavTasks: styled.div`
-    margin: 0 auto;
-    width: 75%;
-    @media (max-width: 899px) {
-      width: 100%;
-    }
-  `,
-  DivTitleMyTasks: styled.div`
-    background-color: #1bc2fa;
-    color: white;
-    border-radius: 1px;
-    text-align: center;
-    margin: auto;
-    padding: 1px;
-    font-family: 'Amaranth', sans-serif;
-  `,
-  DivTitleFavoriteTasks: styled.div`
-    background-color: #00cc00;
+  DivTitleTasks: styled.div`
     color: white;
     border-radius: 1px;
     text-align: center;

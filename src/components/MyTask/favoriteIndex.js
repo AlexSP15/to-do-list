@@ -5,18 +5,17 @@ import Styled from './styles';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
 const MyTask = (props) => {
-
   const [inputValue, setInputValue] = useState(props.value);
 
   const [checkedValue, setCheckedValue] = useState(props.checked);
 
   useEffect(() => {
-    setInputValue(props.value)
-  }, [props.value])
+    setInputValue(props.value);
+  }, [props.value]);
 
   useEffect(() => {
-    setCheckedValue(props.checked)
-  }, [props.checked])
+    setCheckedValue(props.checked);
+  }, [props.checked]);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -27,7 +26,9 @@ const MyTask = (props) => {
       <Styled.DivMyTasks>
         {props.editing ? (
           <Styled.DivFavTasks>
-            <Styled.FormCheck onChange={() => props.onCheckboxClickedFav(props.index)} />
+            <Styled.FormCheck
+              onChange={() => props.onCheckboxClickedFav(props.index)}
+            />
             <Styled.FormControlFav
               autoFocus
               value={inputValue}
@@ -45,10 +46,17 @@ const MyTask = (props) => {
           </Styled.DivFavTasks>
         ) : (
           <Styled.DivFavTasks>
-            <Styled.FormCheck onChange={() => props.onCheckboxClickedFav(props.index)} checked={checkedValue} />
+            <Styled.FormCheck
+              onChange={() => props.onCheckboxClickedFav(props.index)}
+              checked={checkedValue}
+            />
             {props.checked ? (
-              <Styled.FormControlNormal style={{color: "#767676", textDecoration: "line-through"}} value={inputValue} disabled />
-            ):(
+              <Styled.FormControlNormal
+                style={{ color: '#767676', textDecoration: 'line-through' }}
+                value={inputValue}
+                disabled
+              />
+            ) : (
               <Styled.FormControlNormal value={inputValue} disabled />
             )}
             <FavButtonGroup
