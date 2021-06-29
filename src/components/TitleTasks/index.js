@@ -2,15 +2,15 @@ import React from 'react';
 
 import Styled from './styles';
 
-const MyTasks = (title, color) => {
+const TitleTasks = ({ value, color }) => {
   return (
     <div>
       <Styled.DivTitleContainer>
-        <Styled.DivTitleTasks style={{ backgroundColor: title.color }}>
-          <h1>{title.title}</h1>
+        <Styled.DivTitleTasks style={{ backgroundColor: color }}>
+          <h1>{value}</h1>
         </Styled.DivTitleTasks>
       </Styled.DivTitleContainer>
     </div>
   );
 };
-export default MyTasks;
+export default TitleTasks;

@@ -4,18 +4,28 @@ import FavButtonGroup from '../ButtonGroup/favButton';
 import Styled from './styles';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-const MyTask = (props) => {
-  const [inputValue, setInputValue] = useState(props.value);
+const MyTask = ({
+  value,
+  checked,
+  editing,
+  onCheckboxClickedFav,
+  index,
+  onSaveClick,
+  onEditClick,
+  onDeleteClick,
+  favoriteClick,
+}) => {
+  const [inputValue, setInputValue] = useState(value);
 
-  const [checkedValue, setCheckedValue] = useState(props.checked);
+  const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(() => {
-    setInputValue(props.value);
-  }, [props.value]);
+    setInputValue(value);
+  }, [value]);
 
   useEffect(() => {
-    setCheckedValue(props.checked);
-  }, [props.checked]);
+    setCheckedValue(checked);
+  }, [checked]);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -24,11 +34,9 @@ const MyTask = (props) => {
   return (
     <div>
       <Styled.DivMyTasks>
-        {props.editing ? (
+        {editing ? (
           <Styled.DivFavTasks>
-            <Styled.FormCheck
-              onChange={() => props.onCheckboxClickedFav(props.index)}
-            />
+            <Styled.FormCheck onChange={() => onCheckboxClickedFav(index)} />
             <Styled.FormControlFav
               autoFocus
               value={inputValue}
@@ -37,7 +45,7 @@ const MyTask = (props) => {
             <Styled.ButtonIconSave>
               <Styled.ButtonSave
                 className="iconSave"
-                onClick={() => props.onSaveClick(props.index, inputValue)}
+                onClick={() => onSaveClick(index, inputValue)}
               >
                 <Styled.FontAwesomeSave icon={faSave} className="iconSave" />
                 Save
@@ -47,10 +55,10 @@ const MyTask = (props) => {
         ) : (
           <Styled.DivFavTasks>
             <Styled.FormCheck
-              onChange={() => props.onCheckboxClickedFav(props.index)}
+              onChange={() => onCheckboxClickedFav(index)}
               checked={checkedValue}
             />
-            {props.checked ? (
+            {checked ? (
               <Styled.FormControlNormal
                 style={{ color: '#767676', textDecoration: 'line-through' }}
                 value={inputValue}
@@ -60,9 +68,9 @@ const MyTask = (props) => {
               <Styled.FormControlNormal value={inputValue} disabled />
             )}
             <FavButtonGroup
-              onEditClick={props.onEditClick}
-              onDeleteClick={() => props.onDeleteClick(props.value)}
-              favoriteClick={() => props.favoriteClick(props.value)}
+              onEditClick={onEditClick}
+              onDeleteClick={() => onDeleteClick(value)}
+              favoriteClick={() => favoriteClick(value)}
             />
           </Styled.DivFavTasks>
         )}

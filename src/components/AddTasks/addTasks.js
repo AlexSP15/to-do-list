@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 import Styled from './styles';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const AddTasks = (props) => {
+const AddTasks = ({ taskAcc, setTaskAcc }) => {
   const [newTask, setNewTask] = useState({
     text: '',
     status: false,
@@ -12,15 +12,15 @@ const AddTasks = (props) => {
   const sendTask = (e) => {
     e.preventDefault();
     if (newTask.text !== '') {
-      props.setTaskAcc((prev) => {
-        const updatedState = [...prev, {...newTask}];
+      setTaskAcc((prev) => {
+        const updatedState = [...prev, { ...newTask }];
         return updatedState;
       });
     }
 
     return setNewTask({
       text: '',
-      status: false
+      status: false,
     });
   };
 

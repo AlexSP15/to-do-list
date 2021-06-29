@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 
 import AddTasks from './components/AddTasks/addTasks';
-import TitlesTasks from './components/TitlesTasks/index';
+import TitleTasks from './components/TitleTasks/index';
 import TaskList from './components/TaskCells/taskList';
 import FavTasks from './components/TaskCells/favTasks';
 
@@ -66,15 +66,9 @@ function App() {
     });
   };
 
-  let titles = ['My Tasks', 'Favorites Tasks'];
-  const [titleNormal, titleFav] = titles;
-
-  let colors = ['#1bc2fa', '#00cc00'];
-  const [colorNormal, colorFav] = colors;
-
   return (
     <div className="App">
-      <TitlesTasks title={titleFav} color={colorFav} />
+      <TitleTasks value={'Favorites Tasks'} color={'#00cc00'} />
       <FavTasks
         myTasks={favTask}
         setFavTask={setFavTask}
@@ -83,7 +77,7 @@ function App() {
         onCheckboxClickedFav={onCheckboxClickedFav}
       />
       <br />
-      <TitlesTasks title={titleNormal} color={colorNormal} />
+      <TitleTasks value={'My Tasks'} color={'#1bc2fa'} />
       <TaskList
         myTasks={taskAcc}
         setTaskAcc={setTaskAcc}

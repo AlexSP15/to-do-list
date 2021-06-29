@@ -3,8 +3,13 @@ import { React, useState } from 'react';
 
 import Task from '../MyTask/favoriteIndex';
 
-const FavTasks = ({ myTasks, setFavTask, onDeleteClick, favoriteClick, onCheckboxClickedFav }) => {
-  
+const FavTasks = ({
+  myTasks,
+  setFavTask,
+  onDeleteClick,
+  favoriteClick,
+  onCheckboxClickedFav,
+}) => {
   const [editing, setEditing] = useState();
 
   const handleEditClick = (index) => {
@@ -19,22 +24,22 @@ const FavTasks = ({ myTasks, setFavTask, onDeleteClick, favoriteClick, onCheckbo
   return (
     <div>
       {myTasks.map((e, ix) => {
-          return (
-            <Task
-            key={'task-'+ ix}
-              index={ix}
-              editing={editing === ix}
-              value={e.text}
-              onEditClick={() => handleEditClick(ix)}
-              onDeleteClick={onDeleteClick}
-              favoriteClick={favoriteClick}
-              onSaveClick={onSaveClick}
-              handleEditClick={handleEditClick}
-              setFavTask={setFavTask}
-              onCheckboxClickedFav={onCheckboxClickedFav}
-              checked={e.status}
-            />
-          );
+        return (
+          <Task
+            key={'task-' + ix}
+            index={ix}
+            editing={editing === ix}
+            value={e.text}
+            onEditClick={() => handleEditClick(ix)}
+            onDeleteClick={onDeleteClick}
+            favoriteClick={favoriteClick}
+            onSaveClick={onSaveClick}
+            handleEditClick={handleEditClick}
+            setFavTask={setFavTask}
+            onCheckboxClickedFav={onCheckboxClickedFav}
+            checked={e.status}
+          />
+        );
       })}
     </div>
   );

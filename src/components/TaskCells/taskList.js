@@ -3,8 +3,13 @@ import { React, useState } from 'react';
 
 import Task from '../MyTask/index';
 
-const TaskList = ({ myTasks, setTaskAcc, onDeleteClick, favoriteClick, onCheckboxClicked }) => {
-
+const TaskList = ({
+  myTasks,
+  setTaskAcc,
+  onDeleteClick,
+  favoriteClick,
+  onCheckboxClicked,
+}) => {
   const [editing, setEditing] = useState();
 
   const handleEditClick = (index) => {
@@ -19,22 +24,22 @@ const TaskList = ({ myTasks, setTaskAcc, onDeleteClick, favoriteClick, onCheckbo
   return (
     <div>
       {myTasks.map((e, ix) => {
-          return (
-            <Task
-              key={'task-'+ ix}
-              index={ix}
-              editing={editing === ix}
-              value={e.text}
-              onEditClick={() => handleEditClick(ix)}
-              onDeleteClick={onDeleteClick}
-              favoriteClick={favoriteClick}
-              onSaveClick={onSaveClick}
-              handleEditClick={handleEditClick}
-              setTaskAcc={setTaskAcc}
-              onCheckboxClicked={onCheckboxClicked}
-              checked={e.status}
-            />
-          );
+        return (
+          <Task
+            key={'task-' + ix}
+            index={ix}
+            editing={editing === ix}
+            value={e.text}
+            onEditClick={() => handleEditClick(ix)}
+            onDeleteClick={onDeleteClick}
+            favoriteClick={favoriteClick}
+            onSaveClick={onSaveClick}
+            handleEditClick={handleEditClick}
+            setTaskAcc={setTaskAcc}
+            onCheckboxClicked={onCheckboxClicked}
+            checked={e.status}
+          />
+        );
       })}
     </div>
   );
