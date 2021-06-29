@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 
 import Task from '../MyTask/index';
 
-const CreateTask = ({ myTasks, setTaskAcc, onDeleteClick, favoriteClick, onCheckboxClicked }) => {
+const TaskList = ({ myTasks, setTaskAcc, onDeleteClick, favoriteClick, onCheckboxClicked }) => {
 
   const [editing, setEditing] = useState();
 
@@ -39,4 +39,4 @@ const CreateTask = ({ myTasks, setTaskAcc, onDeleteClick, favoriteClick, onCheck
     </div>
   );
 };
-export default CreateTask;
+export default TaskList;
