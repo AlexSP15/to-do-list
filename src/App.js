@@ -6,7 +6,7 @@ import AddTasks from './components/AddTasks/addTasks';
 import TitlesTasks from './components/TitlesTasks/index';
 import FavoriteTasks from './components/TitlesTasks/favoriteTasks';
 import TaskList from './components/TaskCells/taskList';
-import FavTask from './components/TaskCells/favTask';
+import FavTasks from './components/TaskCells/favTasks';
 
 function App() {
   /*
@@ -80,7 +80,7 @@ function App() {
   return (
     <div className="App">
       <FavoriteTasks />
-      <FavTask
+      <FavTasks
         myTasks={favTask}
         setFavTask={setFavTask}
         onDeleteClick={onDeleteClickFav}
