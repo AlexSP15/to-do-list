@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 
 import Task from '../MyTask/favoriteIndex';
 
-const FavTask = ({ myTasks, setFavTask, onDeleteClick, favoriteClick, onCheckboxClickedFav }) => {
+const FavTasks = ({ myTasks, setFavTask, onDeleteClick, favoriteClick, onCheckboxClickedFav }) => {
   
   const [editing, setEditing] = useState();
 
@@ -39,4 +39,4 @@ const FavTask = ({ myTasks, setFavTask, onDeleteClick, favoriteClick, onCheckbox
     </div>
   );
 };
-export default FavTask;
+export default FavTasks;
