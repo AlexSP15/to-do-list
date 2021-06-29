@@ -2,15 +2,14 @@ import React from 'react';
 
 import Styled from './styles';
 
-const MyTasks = () => {
-  const titles = ["My Tasks", "Favorite Tasks"];
+const MyTasks = (title, color) => {
   return (
     <div>
-      <Styled.DivNormalTasks>
-        <Styled.DivTitleMyTasks>
-          <h1>My Tasks</h1>
-        </Styled.DivTitleMyTasks>
-      </Styled.DivNormalTasks>
+      <Styled.DivTitleContainer>
+        <Styled.DivTitleTasks style={{ backgroundColor: title.color }}>
+          <h1>{title.title}</h1>
+        </Styled.DivTitleTasks>
+      </Styled.DivTitleContainer>
     </div>
   );
 };
