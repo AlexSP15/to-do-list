@@ -3,6 +3,7 @@ import React from 'react';
 import Styled from './styles';
 
 const MyTasks = () => {
+  const titles = ["My Tasks", "Favorite Tasks"];
   return (
     <div>
       <Styled.DivNormalTasks>
